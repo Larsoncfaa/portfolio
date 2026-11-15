@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-fr="Stations-service — Adama Kané" data-en="Service stations — Adama Kané">Stations-service — Adama Kané</title>
+<meta name="description" content="Une seule API pour le web et le mobile, et trois niveaux d'accès pour que chacun ne voie que ce qui le concerne.">
+<meta name="theme-color" content="#EDE3CC">
+<link rel="preload" href="../assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/motion.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="veil" aria-hidden="true"></div>
+<header class="hdr" data-tone="paper">
+  <a class="brand" href="../index.html" aria-label="Adama Kané">Adama <b>Kané</b></a>
+  <nav class="nav">
+    <a href="../index.html#travaux" class="keep"><span class="fr">Tous les chantiers</span><span class="en">All work</span></a>
+    <a href="../index.html#contact" class="keep">Contact</a>
+    <div class="lang" role="group" aria-label="Langue"><button data-l="fr" class="on">FR</button><button data-l="en">EN</button></div>
+  </nav>
+</header>
+
+<main>
+<section class="case-hero">
+  <div class="wrap">
+    <p class="small"><span class="fr">Gestion multi-accès</span><span class="en">Multi-level management</span></p>
+    <h1 class="disp split"><span class="fr">Stations-service</span><span class="en">Service stations</span></h1>
+    <p class="case-lead rv"><span class="fr">Une seule API pour le web et le mobile, et trois niveaux d'accès pour que chacun ne voie que ce qui le concerne.</span><span class="en">One API for web and mobile, and three access levels so everyone sees only what concerns them.</span></p>
+    <div class="case-meta rv"><div><span class="small"><span class="fr">Type</span><span class="en">Type</span></span><span class="fr">Web + mobile</span><span class="en">Web + mobile</span></div><div><span class="small"><span class="fr">Accès</span><span class="en">Access</span></span><span class="fr">Admin · responsable · utilisateur</span><span class="en">Admin · manager · user</span></div><div><span class="small"><span class="fr">Rôle</span><span class="en">Role</span></span><span class="fr">Architecture, backend, frontend, mobile</span><span class="en">Architecture, backend, frontend, mobile</span></div></div>
+  </div>
+</section>
+<div class="banner"><div class="banner-in"><svg class="cloth" data-cloth="banner" data-seed="505" aria-hidden="true"></svg></div></div>
+<div class="wrap">
+  <div class="cs rv"><h2><span class="fr">Contexte</span><span class="en">Context</span></h2><div><p class="big fr">Gérer des stations-service demande des vues très différentes selon la personne : celui qui supervise l'ensemble, celui qui est responsable d'un site, celui qui opère au quotidien. L'application sépare ces trois niveaux dès l'architecture.</p><p class="big en">Running service stations requires very different views depending on who you are: the person overseeing everything, the person in charge of a site, the person operating day to day. The application separates these three levels from the architecture up.</p></div></div>
+  <div class="cs rv"><h2><span class="fr">Fonctionnalités</span><span class="en">Features</span></h2><ol><li><span class="fr">Trois niveaux d'accès : admin, responsable, utilisateur.</span><span class="en">Three access levels: admin, manager, user.</span></li><li><span class="fr">Une seule API sert l'interface web et l'application mobile.</span><span class="en">A single API serves the web interface and the mobile app.</span></li><li><span class="fr">Base de données PostgreSQL derrière Django REST.</span><span class="en">PostgreSQL database behind Django REST.</span></li></ol></div>
+  <div class="cs rv"><h2>Architecture</h2><div class="flow rv"><span class="node"><span class="fr">Web React</span><span class="en">React web</span></span><span class="link"></span><span class="node">API DRF</span><span class="link"></span><span class="node core"><span class="fr">Mobile</span><span class="en">Mobile</span></span><span class="link"></span><span class="node">PostgreSQL</span></div></div>
+  
+  <div class="cs rv"><h2><span class="fr">Mon rôle</span><span class="en">My role</span></h2><div><p class="fr">L'architecture, le backend et la base de données, puis le frontend et le mobile.</p><p class="en">The architecture, backend and database, then the frontend and mobile.</p></div></div>
+  <div class="cs rv"><h2>Stack</h2><div class="tags"><span>DRF</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Mobile</span></div></div>
+  <a class="nextp" href="assistant-vocal-bambara.html" data-cur="Suivant" data-cur-en="Next"><span class="small"><span class="fr">Projet suivant</span><span class="en">Next project</span></span><strong><span class="fr">Assistant vocal bambara</span><span class="en">Bambara voice assistant</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></a>
+</div>
+</main>
+<footer class="foot">
+  <svg class="band cloth" data-cloth="band" viewBox="0 0 1200 96" aria-hidden="true"></svg>
+  <div class="wrap foot-in"><b>Adama Kané</b><span>© <span data-year>2026</span> · Bamako</span><a href="../index.html#contact" class="ul"><span class="fr">Me contacter</span><span class="en">Get in touch</span></a></div>
+</footer>
+<script src="../assets/cloth.js"></script>
+<script src="../assets/site.js"></script>
+<script src="../assets/motion.js"></script>
+</body>
+</html>

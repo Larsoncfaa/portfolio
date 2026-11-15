@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-fr="Prédictions football — Adama Kané" data-en="Football predictions — Adama Kané">Prédictions football — Adama Kané</title>
+<meta name="description" content="Une application qui combine plusieurs modèles pour estimer l'issue des matchs sur cinq championnats, et la rend lisible dans un Match Center.">
+<meta name="theme-color" content="#EDE3CC">
+<link rel="preload" href="../assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/motion.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="veil" aria-hidden="true"></div>
+<header class="hdr" data-tone="paper">
+  <a class="brand" href="../index.html" aria-label="Adama Kané">Adama <b>Kané</b></a>
+  <nav class="nav">
+    <a href="../index.html#travaux" class="keep"><span class="fr">Tous les chantiers</span><span class="en">All work</span></a>
+    <a href="../index.html#contact" class="keep">Contact</a>
+    <div class="lang" role="group" aria-label="Langue"><button data-l="fr" class="on">FR</button><button data-l="en">EN</button></div>
+  </nav>
+</header>
+
+<main>
+<section class="case-hero">
+  <div class="wrap">
+    <p class="small"><span class="fr">Machine learning · En développement actif</span><span class="en">Machine learning · Under active development</span></p>
+    <h1 class="disp split"><span class="fr">Prédictions football</span><span class="en">Football predictions</span></h1>
+    <p class="case-lead rv"><span class="fr">Une application qui combine plusieurs modèles pour estimer l'issue des matchs sur cinq championnats, et la rend lisible dans un Match Center.</span><span class="en">An app that combines several models to estimate match outcomes across five leagues, and makes it readable in a Match Center.</span></p>
+    <div class="case-meta rv"><div><span class="small"><span class="fr">Statut</span><span class="en">Status</span></span><span class="fr">En développement actif</span><span class="en">Under active development</span></div><div><span class="small"><span class="fr">Type</span><span class="en">Type</span></span><span class="fr">Application Streamlit</span><span class="en">Streamlit app</span></div><div><span class="small"><span class="fr">Périmètre</span><span class="en">Scope</span></span><span class="fr">5 championnats</span><span class="en">5 leagues</span></div></div>
+  </div>
+</section>
+<div class="banner"><div class="banner-in"><svg class="cloth" data-cloth="banner" data-seed="202" aria-hidden="true"></svg></div></div>
+<div class="wrap">
+  <div class="cs rv"><h2><span class="fr">Contexte</span><span class="en">Context</span></h2><div><p class="big fr">Plutôt qu'un seul modèle, l'application en assemble plusieurs : empilement (stacking), loi de Poisson, buts attendus (xG), classifieurs binaires. Une pondération adaptative et un apprentissage automatique continu ajustent le poids de chacun.</p><p class="big en">Rather than a single model, the app assembles several: stacking, Poisson, expected goals (xG), binary classifiers. Adaptive weighting and continuous automatic learning adjust each one's weight.</p></div></div>
+  <div class="cs rv"><h2><span class="fr">Ce que l'on y lit</span><span class="en">What you can read in it</span></h2><ol><li><span class="fr">Les marchés 1X2, les deux équipes marquent, plus/moins de buts et score exact.</span><span class="en">The 1X2, both-teams-to-score, over/under and exact-score markets.</span></li><li><span class="fr">Un indice de confiance et un indice de convergence entre les modèles.</span><span class="en">A confidence index and an index of convergence between models.</span></li><li><span class="fr">Des signaux classés Fort, Moyen, Faible ou Incertain.</span><span class="en">Signals graded Strong, Medium, Weak or Uncertain.</span></li><li><span class="fr">Un Match Center qui rassemble le tout sur une seule vue.</span><span class="en">A Match Center that gathers it all on a single view.</span></li></ol></div>
+  <div class="cs rv"><h2>Architecture</h2><div class="flow rv"><span class="node">Données</span><span class="link"></span><span class="node">Variables</span><span class="link"></span><span class="node core">Modèles</span><span class="link"></span><span class="node"><span class="fr">Pondération</span><span class="en">Weighting</span></span><span class="link"></span><span class="node">Match Center</span></div></div>
+  <div class="cs rv"><h2><span class="fr">Corrections récentes</span><span class="en">Recent fixes</span></h2><div><p class="fr">Calibration revue avec FrozenEstimator ; réglage Optuna avec TimeSeriesSplit pour éviter les fuites temporelles ; biais des confrontations directes corrigé ; priors de Poisson ; encodage one-hot de la compétition ; chasse aux doublons et aux doubles comptages. Je ne publie aucun taux de réussite : le projet est en développement et rien ne le prouverait encore.</p><p class="en">Calibration reworked with FrozenEstimator; Optuna tuning with TimeSeriesSplit to avoid temporal leakage; head-to-head bias fixed; Poisson priors; one-hot encoding of the competition; hunting down duplicates and double counting. I publish no hit rate: the project is under development and nothing would back it up yet.</p></div></div>
+  <div class="cs rv"><h2><span class="fr">Mon rôle</span><span class="en">My role</span></h2><div><p class="fr">Tout : collecte et préparation des données, modèles, pondération, interface Streamlit.</p><p class="en">Everything: data collection and preparation, models, weighting, Streamlit interface.</p></div></div>
+  <div class="cs rv"><h2>Stack</h2><div class="tags"><span>Python</span><span>Streamlit</span><span>LightGBM</span><span>XGBoost</span><span>CatBoost</span><span>Optuna</span><span>Poisson</span><span>xG</span></div></div>
+  <a class="nextp" href="maliag.html" data-cur="Suivant" data-cur-en="Next"><span class="small"><span class="fr">Projet suivant</span><span class="en">Next project</span></span><strong><span class="fr">MaliAg</span><span class="en">MaliAg</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></a>
+</div>
+</main>
+<footer class="foot">
+  <svg class="band cloth" data-cloth="band" viewBox="0 0 1200 96" aria-hidden="true"></svg>
+  <div class="wrap foot-in"><b>Adama Kané</b><span>© <span data-year>2026</span> · Bamako</span><a href="../index.html#contact" class="ul"><span class="fr">Me contacter</span><span class="en">Get in touch</span></a></div>
+</footer>
+<script src="../assets/cloth.js"></script>
+<script src="../assets/site.js"></script>
+<script src="../assets/motion.js"></script>
+</body>
+</html>
