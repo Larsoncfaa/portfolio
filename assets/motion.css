@@ -10,7 +10,7 @@
 
 /* ---------- 01 · progression de lecture ---------- */
 .prog{
-  position:fixed; top:0; left:0; z-index:101; height:6px; width:0; pointer-events:none;
+  position:fixed; top:0; left:0; z-index:101; height:6px; width:100%; pointer-events:none; clip-path:inset(0 100% 0 0); will-change:clip-path;
   background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'><path d='M0 6 L3 0 L6 6 L9 0 L12 6' fill='none' stroke='%23B4492B' stroke-width='1.6' stroke-linejoin='round'/></svg>") repeat-x left top;
 }
 

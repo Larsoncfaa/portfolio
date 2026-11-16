@@ -1,0 +1,121 @@
+/* =========================================================
+   UX — fluidité, accessibilité, performance
+   Chargé après site.css et motion.css (voir build.sh).
+   ========================================================= */
+
+/* ---------- échelle fluide : tout est en rem, le rem suit l'écran ---------- */
+html{ font-size:clamp(15.5px, 14.6px + .26vw, 19px); scroll-padding-top:72px; -webkit-tap-highlight-color:transparent; }
+body{ font-size:1.0625rem; }
+:root{ --max:clamp(1180px, 88vw, 1680px); }
+a,button{ touch-action:manipulation; }
+h1,h2,h3,.case-lead,.disp{ text-wrap:balance; }
+p,li{ text-wrap:pretty; }
+
+/* ---------- grain : plus léger à composer (pas de mélange plein écran) ---------- */
+body::after{ mix-blend-mode:normal; opacity:.3; }
+@media (pointer:coarse), (max-width:760px){ body::after{ display:none; } }
+
+/* ---------- tissu du hero : une seule ombre, pas de filtre animé ---------- */
+.cloth-wrap{ filter:none; box-shadow:0 34px 42px -18px rgba(45,28,12,.34), 0 4px 8px rgba(45,28,12,.16); clip-path:inset(-140px -140px -140px -140px); }
+.js .cloth-wrap:not(.in){ clip-path:inset(-140px -140px 100% -140px); }
+@media (prefers-reduced-motion:reduce){ .js .cloth-wrap:not(.in){ clip-path:inset(-140px); } }
+
+/* ---------- aide à la navigation ---------- */
+.skip{ position:fixed; left:12px; top:-80px; z-index:2000; padding:12px 18px; background:var(--ink); color:var(--cream); font-weight:600; transition:top .25s var(--ease); }
+.skip:focus{ top:12px; }
+.nav a[aria-current="true"]::after{ width:100%; }
+.hdr{ padding-left:max(var(--pad), env(safe-area-inset-left)); padding-right:max(var(--pad), env(safe-area-inset-right)); }
+.wrap{ padding-left:max(var(--pad), env(safe-area-inset-left)); padding-right:max(var(--pad), env(safe-area-inset-right)); }
+.row:focus-visible{ outline-offset:-4px; }
+.row:focus-visible h3{ transform:translateX(12px); color:var(--rust); }
+.row:focus-visible .thumb{ width:min(15rem,18vw); }
+.row:focus-visible .go{ opacity:1; transform:none; }
+
+/* ---------- bouton flottant « Écrire » (mobile) ---------- */
+.fab{ position:fixed; right:max(16px, env(safe-area-inset-right)); bottom:max(16px, env(safe-area-inset-bottom)); z-index:90; display:none; padding:14px 20px; box-shadow:0 12px 28px -8px rgba(45,28,12,.45); opacity:0; transform:translateY(24px) scale(.96); pointer-events:none; transition:opacity .4s var(--ease), transform .5s var(--ease); }
+.fab.show{ opacity:1; transform:none; pointer-events:auto; }
+.fab svg{ width:1.1em; height:1.1em; }
+@media (max-width:860px){ .fab{ display:inline-flex; } }
+
+/* ---------- tablette & mobile ---------- */
+@media (max-width:1100px){
+  .hero-grid{ gap:clamp(24px,5vw,60px); }
+}
+@media (max-width:860px){
+  .hdr{ padding-top:12px; padding-bottom:12px; }
+  .nav{ gap:12px; }
+  body.menu-open{ overflow:hidden; }
+  .mnav a{ opacity:0; transform:translateY(24px); transition:opacity .6s var(--ease), transform .7s var(--ease); }
+  body.menu-open .mnav a{ opacity:1; transform:none; }
+  body.menu-open .mnav a:nth-child(1){ transition-delay:.25s; }
+  body.menu-open .mnav a:nth-child(2){ transition-delay:.32s; }
+  body.menu-open .mnav a:nth-child(3){ transition-delay:.39s; }
+  body.menu-open .mnav a:nth-child(4){ transition-delay:.46s; }
+  body.menu-open .mnav a:nth-child(5){ transition-delay:.53s; }
+  .mnav{ visibility:hidden; transition:transform .7s cubic-bezier(.7,0,.2,1), visibility 0s linear .7s; }
+  body.menu-open .mnav{ visibility:visible; transition-delay:0s; }
+  .row{ grid-template-columns:2.4rem minmax(0,1fr); padding-right:0; }
+  .row h3{ padding-right:46px; }
+  .row .go{ display:grid; opacity:1; transform:none; top:26px; margin-top:0; width:36px; height:36px; }
+  .row:hover h3{ transform:none; }
+  .craft-row{ gap:6px; }
+  .items{ font-size:clamp(1.35rem,5.6vw,2rem); }
+  .case-hero{ padding-top:104px; }
+}
+@media (max-width:560px){
+  .step{ grid-template-columns:minmax(0,1fr); gap:6px; }
+  .step .yr{ font-size:1.9rem; }
+  .steps{ --tlp:22px; }
+  .sec-head{ margin-bottom:28px; }
+  .hero-cta{ gap:14px 24px; }
+  .btn{ padding:16px 22px; }
+  .paths a{ padding-top:22px; padding-bottom:22px; }
+  .reach{ grid-template-columns:1fr; gap:18px; }
+  .foot-in{ flex-direction:column; gap:6px; }
+  .flow{ flex-direction:column; align-items:flex-start; }
+  .flow .link{ flex:0 0 26px; width:1.6px; height:26px; margin-left:22px; transform-origin:top; }
+  .flow .link::after{ right:auto; left:-4px; top:auto; bottom:-1px; transform:rotate(135deg); }
+  .rv .link{ transform:scaleY(0); }
+  .rv.in .link{ transform:none; }
+  .cs ol li{ font-size:1rem; grid-template-columns:2.4rem 1fr; }
+}
+@media (max-height:520px) and (orientation:landscape){
+  .hero{ min-height:auto; padding-top:96px; }
+  .curtain-word{ font-size:2rem; }
+}
+
+/* ---------- appareils tactiles ---------- */
+@media (pointer:coarse){
+  .lang button{ padding:13px 10px; }
+  .menu-btn{ padding:13px 6px; }
+  .copy, .reach a{ padding:8px 0; display:inline-block; }
+  .link-arrow, .nextp, .paths a{ -webkit-user-select:none; user-select:none; }
+}
+
+/* ---------- très grands écrans ---------- */
+@media (min-width:1900px){
+  .hero-grid{ grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr); }
+  .cloth-wrap{ max-width:540px; }
+}
+
+/* ---------- chargement : rien ne saute ---------- */
+@font-face{ font-family:'Fraunces fallback'; src:local('Georgia'); size-adjust:94%; ascent-override:92%; descent-override:24%; line-gap-override:0%; }
+:root{ --serif:'Fraunces','Fraunces fallback','Iowan Old Style',Georgia,serif; }
+
+/* ---------- impression ---------- */
+@media print{
+  .hdr,.mnav,.fab,.prog,.cur,.curtain,.veil,.marq,.strip,body::after{ display:none !important; }
+  body{ background:#fff; }
+  .ink,.indigo{ background:#fff; color:#000; }
+  .js .rv:not(.in), .js .stg{ opacity:1 !important; transform:none !important; }
+}
+
+/* ---------- correctifs d'en-tête & d'étiquettes ---------- */
+.brand{ white-space:nowrap; }
+.tags > span{ display:inline-block; }
+.tags span span{ border:0; padding:0; }
+@media (max-width:430px){
+  .nav a.keep{ display:none; }
+  .nav{ gap:6px; }
+  .brand{ font-size:1.25rem; }
+}
